@@ -11,6 +11,8 @@ Before doing anything make sure you have `composer` installed. Then run `compose
 
 To test your telnet connection, type:  `telnet 127.0.0.1 9998`  then you should see "Connected and Escape ]"...  type:   `show config` to see that you are connected.
 
+Trying to disconnect from Telnet?   Use this key combo in linux:  CTRL+]    then type `quit`.
+
 To run a blakserv command, try this:   `php blakserv.php save`
 
 You must edit `app\Blakserv\Commands.php` and put in your Maintenance IP and Port (right now it's set to 127.0.0.1 / 9998).
