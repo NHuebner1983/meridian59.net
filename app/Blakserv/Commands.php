@@ -8,8 +8,9 @@ class Commands {
 
     public $blakserv;
 
-    const HOST = '127.0.0.1';
-    const PORT = '9998';
+    const HOST    = '127.0.0.1';
+    const PORT    = 9998;
+    const TIMEOUT = 5;
 
     const RELOAD_SYSTEM = [
         'command' => 'reload system',
@@ -99,9 +100,9 @@ class Commands {
         self::ROUTINE_SAVE,
     ];
 
-    public function __construct()
+    public function __construct($custom_timeout = self::TIMEOUT)
     {
-        $this->blakserv = new TelnetClient(self::HOST, self::PORT);
+        $this->blakserv = new TelnetClient(self::HOST, self::PORT, $custom_timeout ?: self::TIMEOUT);
         $this->blakserv->connect();
     }
 
@@ -119,9 +120,7 @@ class Commands {
 
     public function exec($command = [])
     {
-        echo "\n\nExecuting: {$command['command']}...";
-        $this->blakserv->execute($command['command'], $command['success'], $command['fail']);
-        echo "OK\n\n";
+        return $this->blakserv->execute($command['command'], $command['success'], $command['fail']);
     }
 
     public function save()
