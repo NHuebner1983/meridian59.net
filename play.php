@@ -4,7 +4,7 @@ require "vendor/autoload.php";
 
 use App\Blakserv\Commands;
 
-$download_game_url = 'http://update.meridian59.net/download/M59-115.Patcher.msi';
+$download_game_url = 'http://update.meridian59.us/download/M59-115.Patcher.msi';
 
 //error_reporting(E_ALL);
 //ini_set('display_errors', 1);
@@ -194,7 +194,7 @@ function no_double_spaces($str)
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Meridian59.net - Server 115</title>
+    <title>Meridian59.us - Play Now!</title>
     <style>
         body {
             background-image: url(/images/dark-angels.png);
